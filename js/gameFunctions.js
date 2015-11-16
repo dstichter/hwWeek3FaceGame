@@ -5,14 +5,13 @@ var timerDisplay = 0;
 var gameCounter = 0;
 //Event Listeners
 toggleButton.addEventListener("click", toggleStart);
-//toggleButton.addEventListener("click", function() {alert("You clicked")});
 for(i = 0;i < gameImages.length;i++){
   gameImages[i].addEventListener('click', gameScore)
 }
-
+//Button Functionality
 function toggleStart() {
   if(this.getAttribute("data-state") === "start"){
-    timerDisplay = 3;
+    timerDisplay = 20;
     timerInterval = setInterval(gameRunning, 1000);
   }
   if(this.getAttribute("data-state") === "running"){
@@ -21,6 +20,7 @@ function toggleStart() {
     this.innerHTML = "Start";
   }
 }
+//Timer Display / Game Over Check
 function gameRunning() {
   toggleButton.setAttribute("data-state","running");
   if(timerDisplay === 0){
@@ -37,6 +37,7 @@ function gameRunning() {
   timerDisplay--;
   }
 }
+//Image Click Function
 function gameScore() {
   if(this.getAttribute("data-state") === "notClicked") {
     gameCounter++;
