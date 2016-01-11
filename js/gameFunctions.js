@@ -1,3 +1,5 @@
+$( document ).ready(function() {
+
 var toggleButton = document.getElementById('toggleButton');
 var gameImages = document.getElementsByTagName('img');
 var timerInterval = 0;;
@@ -29,7 +31,9 @@ function gameRunning() {
   toggleButton.setAttribute("data-state","running");
   if(timerDisplay === 0){
     clearInterval(timerInterval);
-    alert("Score: " + gameCounter);
+    $(".modalinfo").html("You clicked " + gameCounter + " images!");
+    $('#endgameModal').modal('show');
+
     toggleButton.innerHTML = "Start";
     gameCounter = 0;
     for(i = 0;i < gameImages.length;i++){
@@ -51,6 +55,7 @@ function gameScore() {
   }
 }
 
+});
 
 
 
