@@ -1,16 +1,22 @@
+$( document ).ready(function() {
+
 var toggleButton = document.getElementById('toggleButton');
 var gameImages = document.getElementsByTagName('img');
 var timerInterval = 0;;
 var timerDisplay = 0;
 var gameCounter = 0;
 //Event Listeners
+
+
 toggleButton.addEventListener("click", toggleStart);
-for(i = 0;i < gameImages.length;i++){
-  gameImages[i].addEventListener('click', gameScore)
-}
+
+
 //Button Functionality
 function toggleStart() {
   if(this.getAttribute("data-state") === "start"){
+    for(i = 0;i < gameImages.length;i++){
+      gameImages[i].addEventListener('click', gameScore);
+    }
     timerDisplay = 20;
     timerInterval = setInterval(gameRunning, 1000);
   }
@@ -25,7 +31,9 @@ function gameRunning() {
   toggleButton.setAttribute("data-state","running");
   if(timerDisplay === 0){
     clearInterval(timerInterval);
-    alert("Score: " + gameCounter);
+    $(".modalinfo").html("You clicked " + gameCounter + " images!");
+    $('#endgameModal').modal('show');
+
     toggleButton.innerHTML = "Start";
     gameCounter = 0;
     for(i = 0;i < gameImages.length;i++){
@@ -33,15 +41,21 @@ function gameRunning() {
     }
   }
   else{
-  toggleButton.innerHTML = timerDisplay;
-  timerDisplay--;
+    toggleButton.innerHTML = timerDisplay;
+    timerDisplay--;
   }
 }
 //Image Click Function
 function gameScore() {
   if(this.getAttribute("data-state") === "notClicked") {
     gameCounter++;
-    this.setAttribute("data-state", "clicked")
+    this.setAttribute("data-state", "clicked");
+    this.setAttribute("id", "bordered");
+    document.getElementById("clickcount").innerHTML = gameCounter;
   }
-  }
+}
+
+});
+
+
 

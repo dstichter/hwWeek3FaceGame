@@ -1,6 +1,9 @@
 .image{
-  width: 178px;
-  padding: 3px;
+  width: auto;
+  height: auto;
+  max-width: 200px; 
+  max-height: 200px;
+  padding: 10px;
 }
 h3 {
   text-align: center;
@@ -11,4 +14,8 @@ p{
 }
 body{
   background-color: #adad85;
+}
+
+#bordered {
+ border: solid 10px black;
 }
