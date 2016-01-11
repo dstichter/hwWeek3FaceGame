@@ -6,16 +6,17 @@ var gameCounter;
 alert('hi');
 //Event Listeners
 toggleButton.addEventListener('click', toggleStart)
-for (i = 0;i < gameImages.length;i++){
-  gameImages[i.addEventListener('click', gameScore)]
-}
+
 
 
 
 function toggleStart() {
   if (this.getAttribute("data-state") === "start"){
+    for (i = 0;i < gameImages.length;i++){
+      gameImages[i.addEventListener('click', gameScore)]
+    }
     timerDisplay = 20;
-    this.setAttribute('data-state','running')
+    this.setAttribute('data-state','running');
     timerIntervale = setIntervale(gameRunning, 1000)
   }
   if (this.getAttribute("data-state") === "running"){
@@ -31,8 +32,8 @@ function gameRunning() {
     clearIntervale(timerIntervale);
     toggleButton.innerHtML = "Start";
     alert("Score: " + gameCounter);
-        gameCounter = 0;
-        document.getElementById("clickcount").innerHTML = gameCounter;
+    gameCounter = 0;
+    document.getElementById("clickcount").innerHTML = gameCounter;
 
   }
   function gameScore() {

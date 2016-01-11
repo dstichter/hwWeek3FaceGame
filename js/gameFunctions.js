@@ -8,6 +8,7 @@ var gameCounter = 0;
 
 toggleButton.addEventListener("click", toggleStart);
 
+
 //Button Functionality
 function toggleStart() {
   if(this.getAttribute("data-state") === "start"){
@@ -45,7 +46,11 @@ function gameScore() {
   if(this.getAttribute("data-state") === "notClicked") {
     gameCounter++;
     this.setAttribute("data-state", "clicked");
+    this.setAttribute("id", "bordered");
     document.getElementById("clickcount").innerHTML = gameCounter;
   }
 }
+
+
+
 
