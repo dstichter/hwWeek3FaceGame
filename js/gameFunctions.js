@@ -42,6 +42,7 @@ function gameScore() {
   if(this.getAttribute("data-state") === "notClicked") {
     gameCounter++;
     this.setAttribute("data-state", "clicked")
+    document.getElementById("clickcount").innerHTML = gameCounter;
   }
   }
 

@@ -24,17 +24,19 @@ function toggleStart() {
     this.innerHTML = "Start";
   }
 }
-function gameRunning(){
+function gameRunning() {
   toggleButton.innerHTML = timerDisplay;
   timerDisplay--;
-  if (timeDisplay === 0){
+  if (timeDisplay === 0) {
     clearIntervale(timerIntervale);
     toggleButton.innerHtML = "Start";
     alert("Score: " + gameCounter);
         gameCounter = 0;
+        document.getElementById("clickcount").innerHTML = gameCounter;
 
   }
-  function gameScore(){
+  function gameScore() {
     gameCounter++;
+
   }
 }

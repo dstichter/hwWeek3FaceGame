@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Faces Game</title>
 </head>
 <body>
 
-<div class="container-fluid">
-  <div class="row-fluid">
-    <header>
-      <h3>David Stichter's Face Game</h3>
-      <p>Press start and click the faces for 20 seconds.  Click Button again to stop early</p>
-    </header>
+  <div class="container-fluid">
+
     <div class="row-fluid">
-      <div class="col-md-12 text-center">
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14589242068_f58bd30682a6af4265c4_512.jpg" class="image" data-state="notClicked">
+      <header>
+        <h3>David Stichter's Face Game</h3>
+        <p>Press start and click the faces for 20 seconds.  Click Button again to stop early</p>
+      </header>
 
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14582133030_f3a2720d08cb20a7e042_512.jpg" class="image" data-state="notClicked">
-
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-09/14195496838_ed3598e68442e22db3b3_192.jpg" class="image" data-state="notClicked">
-
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-12/12369478886_047ed996eb463915c154_512.jpg" class="image" data-state="notClicked">
-
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-15/12605494644_3d6e67e83699b711ad00_512.jpg" class="image" data-state="notClicked">
-      </div> 
-
-      <div class="col-md-12 text-center">
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-27/13344648103_7f0e9c5d78bd0e2e74a2_512.jpg" class="image" data-state="notClicked">
-
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-14/12527755265_3c96a3b38186bb2daf41_512.jpg" class="image" data-state="notClicked">
-
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-15/12606003636_d247d92d024111ee8926_512.jpg" class="image" data-state="notClicked">
-
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-18/12729312981_c9a41cbdc2069c0382c6_192.jpg" class="image" data-state="notClicked">
-
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-14/12526295109_8d051cf751202a50ae91_512.jpg" class="image" data-state="notClicked">
+      <div class="row-fluid">
+        <button class="btn btn-primary btn-block" id="toggleButton" data-state="start">Start</button>
       </div>
 
-      <div class="col-md-12 text-center">
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-08/14130798194_ce4dbb2ea84b88f555ad_512.jpg" class="image" data-state="notClicked">
+      <div class="text-center">Click count: <span id="clickcount"></span></div>
 
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14576301635_ad7da8173b60e382a18a_512.jpg" class="image" data-state="notClicked">
+      <div class="row-fluid">
+        <div class="col-md-12 text-center">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14589242068_f58bd30682a6af4265c4_512.jpg" class="image" data-state="notClicked">
 
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14574708789_8984334cf4a68dfd8aa5_512.jpg" class="image" data-state="notClicked">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14582133030_f3a2720d08cb20a7e042_512.jpg" class="image" data-state="notClicked">
 
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-15/12586849876_543f5438f4c2f98a71c8_192.jpg" class="image" data-state="notClicked">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-09/14195496838_ed3598e68442e22db3b3_192.jpg" class="image" data-state="notClicked">
 
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-04/13874635268_e12227deed9fda2f5273_512.jpg" class="image" data-state="notClicked">
-      </div>
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-12/12369478886_047ed996eb463915c154_512.jpg" class="image" data-state="notClicked">
 
-      <div class="col-md-12 text-center">
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-13/12436573795_bef64bbfd5472ac44a07_512.jpg" class="image" data-state="notClicked">
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-15/12598021890_6f64397aca5e243bceec_512.jpg" class="image" data-state="notClicked">
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-04/13903438293_8bcdf0555afffc0c1bb4_512.jpg" class="image" data-state="notClicked">
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-15/14617201633_e33afab820c4fc9d011a_512.jpg" class="image" data-state="notClicked">
-        <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14579949206_b2917d835c24fb05aa91_512.jpg" class="image" data-state="notClicked">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-15/12605494644_3d6e67e83699b711ad00_512.jpg" class="image" data-state="notClicked">
+        </div> 
+
+        <div class="col-md-12 text-center">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-27/13344648103_7f0e9c5d78bd0e2e74a2_512.jpg" class="image" data-state="notClicked">
+
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-14/12527755265_3c96a3b38186bb2daf41_512.jpg" class="image" data-state="notClicked">
+
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-15/12606003636_d247d92d024111ee8926_512.jpg" class="image" data-state="notClicked">
+
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-18/12729312981_c9a41cbdc2069c0382c6_192.jpg" class="image" data-state="notClicked">
+
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-14/12526295109_8d051cf751202a50ae91_512.jpg" class="image" data-state="notClicked">
+        </div>
+
+        <div class="col-md-12 text-center">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-08/14130798194_ce4dbb2ea84b88f555ad_512.jpg" class="image" data-state="notClicked">
+
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14576301635_ad7da8173b60e382a18a_512.jpg" class="image" data-state="notClicked">
+
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14574708789_8984334cf4a68dfd8aa5_512.jpg" class="image" data-state="notClicked">
+
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-15/12586849876_543f5438f4c2f98a71c8_192.jpg" class="image" data-state="notClicked">
+
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-04/13874635268_e12227deed9fda2f5273_512.jpg" class="image" data-state="notClicked">
+        </div>
+
+        <div class="col-md-12 text-center">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-13/12436573795_bef64bbfd5472ac44a07_512.jpg" class="image" data-state="notClicked">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-10-15/12598021890_6f64397aca5e243bceec_512.jpg" class="image" data-state="notClicked">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-04/13903438293_8bcdf0555afffc0c1bb4_512.jpg" class="image" data-state="notClicked">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-15/14617201633_e33afab820c4fc9d011a_512.jpg" class="image" data-state="notClicked">
+          <img alt="clickablePhoto" src="https://avatars.slack-edge.com/2015-11-14/14579949206_b2917d835c24fb05aa91_512.jpg" class="image" data-state="notClicked">
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row-fluid">
-    <button class="btn btn-primary btn-block" id="toggleButton" data-state="start">Start</button>
   </div>
-</div>
 
   <script type="text/javascript" src="js/gameFunctions.js"></script>
 </body>
